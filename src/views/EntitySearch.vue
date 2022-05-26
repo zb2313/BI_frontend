@@ -131,17 +131,7 @@ export default {
           }
         ]
       }
-      for (var i = 1990; i < 2021; i++) {
-        await getByYearIdType(i, this.idInput, this.radio1).then(
-            res => {
-              myoption.xAxis.data.push(i)
-              myoption.series[0].data.push(Object.getOwnPropertyNames(res.data).length)
-            }
-        )
-            .catch(function () {
-              i--
-            })
-      }
+
       this.drawLine(myoption)
     },
     async showGraph1Style() {
@@ -181,21 +171,7 @@ export default {
           }
         ]
       }
-      for (var i in this.styleNames) {
-        await getByStyleIdType(this.styleNames[i], this.idInput, this.radio1).then(
-            res => {
-              if (Object.getOwnPropertyNames(res.data).length != 0) {
-                var name = this.styleNames[i].replace(/%20/g, ' ')
-                name = name.replace(/%26/g, '&') // 去除转义符号
-                myoption.xAxis[0].data.push(name)
-                myoption.series[0].data.push(Object.getOwnPropertyNames(res.data).length)
-              }
-            }
-        )
-            .catch(function () {
-              i--
-            })
-      }
+
 
       this.drawLine(myoption)
     },
@@ -223,16 +199,6 @@ export default {
           }
         ]
       };
-      for (var i = 1990; i < 2021; i++) {
-        await getByStyleYear(i, this.value).then(
-            res => {
-              myoption.xAxis.data.push(i)
-              myoption.series[0].data.push(Object.getOwnPropertyNames(res.data).length)
-            }
-        ).catch(function () {
-          i--
-        })
-      }
       this.drawLine(myoption)
     },
     async showGraph2StyleAndScore() {
@@ -319,25 +285,6 @@ export default {
           }
         ]
       };
-      for (var i in this.styleNames) {
-        await getByStyleAvg1(this.styleNames[i]).then(
-            res => {
-              // console.log(res.data)
-              myoption.series[0].data.push(res.data.avgImdb)
-              myoption.series[1].data.push(res.data.avgReviewPoint * 2)
-
-            }
-        )
-        await getByStyleAvg2(this.styleNames[i]).then(
-            res => {
-              myoption.series[2].data.push(res.data.avg *10)
-              // console.log(res.data)
-              var name = this.styleNames[i].replace(/%20/g, ' ')
-              name = name.replace(/%26/g, '&') // 去除转义符号
-              myoption.xAxis[0].data.push(name)
-            }
-        )
-      }
       this.drawLine(myoption)
 
     }
