@@ -30,9 +30,15 @@ const routes = [
                 //数据概览
             },
             {
-                path: "/DAUnit",
-                name: "DAUnit",
-                component: () => import("@/views/DAUnit")
+                path: "/DUnit",
+                name: "DUnit",
+                component: () => import("@/views/DUnit")
+                //某领域的关键作者和单位
+            },
+            {
+                path: "/DAuthor",
+                name: "DAuthor",
+                component: () => import("@/views/DAuthor")
                 //某领域的关键作者和单位
             },
             {

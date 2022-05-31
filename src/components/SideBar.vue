@@ -60,8 +60,8 @@ export default {
         },
         {
           icon: "el-icon-s-grid",
-          index: "/DAUnit",
-          title: "领域学者&机构查询",
+          index: "/DUnit",
+          title: "领域机构查询",
           // subs: [
           //   {
           //     index: "/AttractionOrder",
@@ -77,7 +77,11 @@ export default {
           //   },
           // ],
         },
-
+        {
+          icon: "el-icon-tickets",
+          index: "/DAuthor",
+          title: "领域作者查询",
+        },
         {
           icon: "el-icon-tickets",
           index: "/DCJournal",

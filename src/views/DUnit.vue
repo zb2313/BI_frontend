@@ -1,17 +1,16 @@
 <template>
-  <div>
-    <el-input v-model="interest" style="width: 300px"></el-input>
-    <el-input v-model="count" style="width: 100px" placeholder="查询个数"></el-input>
-    <el-button @click="getKeyJournal">查询</el-button>
-    <div id="main" style="width: 100%;height:1200px;"></div>
-  </div>
+<div>
+   <el-input v-model="interest" style="width: 300px"></el-input>
+  <el-button @click="getKeyUnit">查询</el-button>
+  <div id="main" style="width: 100%;height:1200px;"></div>
+</div>
 </template>
 
 <script>
-import {keyJournal} from "../api/domain";
+import {keyUnit} from "../api/domain";
 
 export default {
-  name: "DCJournal",
+  name: "DAUnit",
   components:{
 
   },
@@ -19,9 +18,7 @@ export default {
   {
     return{
       interest:"",
-      keyvenues:[],
-      count:10
-
+      keyunits:[],
 
     }
   },
@@ -36,7 +33,7 @@ export default {
       let option = {
         title: {
           text: 'domain search',
-          subtext: 'key venue',
+          subtext: 'key units',
           left: 'center'
         },
         tooltip: {
@@ -66,29 +63,29 @@ export default {
     },
     setData()
     {
-      let dt =[
+     let dt =[
 
       ]
-      for(let i=0;i<this.keyvenues.length;i++)
+      for(let i=0;i<this.keyunits.length;i++)
       {
         dt.push({
-          value:this.keyvenues[i].paperCount,
-          name:this.keyvenues[i].venue.name,
+          value:this.keyunits[i].ct,
+          name:this.keyunits[i].affiliation.name
         })
       }
       return dt
     },
-    getKeyJournal()
-    {
-       keyJournal(this.interest).then(
+     getKeyUnit()
+     {
+       keyUnit(this.interest).then(
            res=>{
-             console.log(res.data)
-             this.keyvenues=res.data.slice(0,this.count)
-             console.log(this.keyvenues)
+             this.keyunits=res.data;
+             console.log(this.keyunits)
              this.drawChart()
            }
        )
-    }
+
+     }
 
 
   }

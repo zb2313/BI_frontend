@@ -49,70 +49,7 @@ export default {
     }
   },
   methods:{
-    getDDInfoM(){
-      let sendtime=(new Date()).getTime()
-      getDirectors100().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeM=(gettime-sendtime)/1000
-            this.relationListM=response.data
-            console.log(response.data)
-          }
-      )
-    },
-    getDAInfoM(){
-      let sendtime=(new Date()).getTime()
-      getDirectorActor100().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeM=(gettime-sendtime)/1000
-            this.relationListM=response.data
-            console.log(gettime,sendtime)
-          }
-      )
-    },
-    getAAInfoM(){
-      let sendtime=(new Date()).getTime()
-      getActors100().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeM=(gettime-sendtime)/1000
-            this.relationListM=response.data
-            console.log(gettime,sendtime)
-          }
-      )
-    },
-    getDDInfoN(){
-      let sendtime=(new Date()).getTime()
-      getDirectorDirector().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeN=(gettime-sendtime)/1000
-            this.relationListN=response.data
-            console.log(gettime,sendtime)
-          }
-      )
-    },
-    getAAInfoN(){
-      let sendtime=(new Date()).getTime()
-      getActorActor().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeN=(gettime-sendtime)/1000
-            this.relationListN=response.data
-          }
-      )
-    },
-    getDAInfoN(){
-      let sendtime=(new Date()).getTime()
-      getDirectorActor().then(
-          response=>{
-            let gettime=(new Date()).getTime()
-            this.timeN=(gettime-sendtime)/1000
-            this.relationListN=response.data
-          }
-      )
-    },
+
   }
 }
 </script>
