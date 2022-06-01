@@ -32,7 +32,7 @@ export default {
       // 指定图表的配置项和数据
       let option = {
         title: {
-          text: 'domain search',
+          text: '关键机构查询',
           subtext: 'key units',
           left: 'center'
         },
@@ -41,7 +41,8 @@ export default {
         },
         legend: {
           orient: 'vertical',
-          left: 'left'
+          left: 'left',
+          top: '50'
         },
         series: [
           {
@@ -93,31 +94,5 @@ export default {
 </script>
 
 <style scoped>
-.fl{
-  float: right;
-  margin-right:20px;
-}
-.fy{
-  text-align:center;
-  margin-top:30px;
-}
-.title{
-  height:100%;
-}
-.el-col {
-  border-radius: 4px;
-}
-.bg-purple-dark {
-  background: #99a9bf;
-}
-.bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
+
 </style>

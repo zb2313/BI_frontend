@@ -45,18 +45,18 @@ export default {
   },
   methods:{
 
-    getComments(row){
-      if(this.commentList!=[]) {
-        let str=row.movie_name.replaceAll(' ','%20')
-        str=str.replaceAll('&','%26')
-      }
-      this.commentVisible=true
-    },
-    getMovieDetails(row) {
-      let str=row.movie_name.replaceAll(' ','%20')
-      str=str.replaceAll('&','%26')
-      this.detailsVisible=true
-    },
+    // getComments(row){
+    //   if(this.commentList!=[]) {
+    //     let str=row.movie_name.replaceAll(' ','%20')
+    //     str=str.replaceAll('&','%26')
+    //   }
+    //   this.commentVisible=true
+    // },
+    // getMovieDetails(row) {
+    //   let str=row.movie_name.replaceAll(' ','%20')
+    //   str=str.replaceAll('&','%26')
+    //   this.detailsVisible=true
+    // },
 
     current_change(currentPage){
       this.currentPage = currentPage;
