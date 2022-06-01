@@ -184,8 +184,14 @@ export default {
         xAxis: [
           {
             type: 'category',
+            name:"author",
             axisTick: { show: false },
-            data: this.authorname
+            data: this.authorname,
+            axisLabel:{
+              interval:0,
+              formatter: function (value) {
+                return value.split(' ').join('\n');
+              }}
           }
         ],
         yAxis: [

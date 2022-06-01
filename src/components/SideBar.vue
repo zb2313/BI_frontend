@@ -61,7 +61,7 @@ export default {
         {
           icon: "el-icon-s-grid",
           index: "/DUnit",
-          title: "领域机构查询",
+          title: "关键单位查询",
           // subs: [
           //   {
           //     index: "/AttractionOrder",
@@ -80,17 +80,17 @@ export default {
         {
           icon: "el-icon-tickets",
           index: "/DAuthor",
-          title: "领域作者查询",
+          title: "关键作者查询",
         },
         {
           icon: "el-icon-tickets",
           index: "/DCJournal",
-          title: "领域会议&期刊查询",
+          title: "关键会议/期刊查询",
         },
         {
           icon: "el-icon-document-copy",
           index: "/DDAUnit",
-          title: "领域时间查询",
+          title: "关键会议/期刊查询-2",
         },
         {
           icon: "el-icon-s-opportunity",

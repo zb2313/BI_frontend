@@ -3,7 +3,7 @@
     <el-input v-model="interest" style="width: 300px"></el-input>
     <el-input v-model="count" style="width: 100px" placeholder="查询个数"></el-input>
     <el-button @click="getKeyJournal">查询</el-button>
-    <div id="main" style="width: 100%;height:1200px;"></div>
+    <div id="main" style="width: 100%;height:800px;"></div>
   </div>
 </template>
 
@@ -43,8 +43,9 @@ export default {
           trigger: 'item'
         },
         legend: {
-          orient: 'vertical',
-          left: 'left'
+          orient: 'horizontal',
+          left: 'left',
+          top: '50',
         },
         series: [
           {
