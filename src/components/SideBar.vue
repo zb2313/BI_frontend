@@ -90,7 +90,7 @@ export default {
         {
           icon: "el-icon-document-copy",
           index: "/DDAUnit",
-          title: "关键会议/期刊查询-2",
+          title: "关键会议/期刊查询-年",
         },
         {
           icon: "el-icon-s-opportunity",

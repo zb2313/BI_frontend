@@ -17,3 +17,8 @@ export const keyJournal = (data) => {
     console.log(url);
     return axios.get(`${url}`);
 };
+export const keyUnitYear = (data,year) => {
+    let url = baseurl+"keyVenueByYear?interest="+encodeURI(data)+"&year="+year;
+    console.log(url);
+    return axios.get(`${url}`);
+};
