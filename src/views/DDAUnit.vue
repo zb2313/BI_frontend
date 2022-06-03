@@ -64,7 +64,7 @@ export default {
       // ]
 
       const myChart = echarts.init(document.getElementById("main"))
-      var updateFrequency = 6000;
+      let updateFrequency = 600;
       let years = [];
       let startIndex = 0;
       for (let i = 0; i < this.dtyear.length; ++i) {
@@ -133,13 +133,13 @@ export default {
             valueAnimation: true,
             fontFamily: 'monospace',
             formatter: function (data) {
-              return startCut[data.dataIndex] + "%";
+              return startCut[data.dataIndex];
             }
           },
           data: startCut
         }],
         animationDuration: 0,
-        animationDurationUpdate: 1000,
+        animationDurationUpdate: 10,
         animationEasing: 'linear',
         animationEasingUpdate: 'linear',
         graphic: {
@@ -219,7 +219,7 @@ export default {
         }
       ]
       const myChart = echarts.init(document.getElementById("main"))
-      var updateFrequency = 6000;
+      var updateFrequency = 600;
       var month = [];
       var startIndex = 0;
       for (var i = 0; i < newArr.length; ++i) {
