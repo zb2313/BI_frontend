@@ -85,13 +85,14 @@ export default {
           max: 'dataMax',
           axisLabel: {
             formatter: function (n) {
+              console.log(n,"formatter",Math.round(n) + '')
               return Math.round(n) + '';
             }
           }
         },
         dataset: {
           source: data.filter(function (d) {
-            return d.year === startYear;
+            return d[3] === startYear;
           })//获取该年的所有数据 列表形式
           //{[B,2000,xxxx], [A,2000,xxxx]}
         },
@@ -134,7 +135,7 @@ export default {
             },
             encode: {
               x: dimension,
-              y: 3
+              y: 2
             },
             label: {
               show: true,
@@ -175,10 +176,10 @@ export default {
       }
       function updateYear(year) {
         let source = data.filter(function (d) {
-          return d.year === year;
+          return d[3] === year;
         });
         option.series[0].data = source;
-        console.log(year,option.series[0].data[0].year,
+        console.log(year,option.series[0].data[0],
             option.series[0].data)
         option.graphic.elements[0].style.text = year;
         myChart.setOption(option);
@@ -191,32 +192,20 @@ export default {
       console.log("jinru")
       for(let i=Number(this.begin);i<=Number(this.end);i++)
       {
-        console.log("年",i)
         keyUnitYear(this.interest,i).then(
             res=>{
-              let name=[],paperCounts=[]
               for(let j=0;j<res.data.length;j++)
               {
-                name.push(res.data[j].venue.name)
-                paperCounts.push(res.data[j].paperCount)
                 this.dtyear2.push(
-                    {
-                      "year":i,
-                      "data":res.data[j]
-                    }
+                    [res.data[j].paperCount,
+                      res.data[j].venue.id,
+                      res.data[j].venue.name,
+                    i]
                 )
               }
-              let dt={
-                "names":name,
-                "paperCounts":paperCounts,
-                "year":i
-              }
-              this.dtyear.push(dt)
               if(i==this.end)
               {
                 this.$message.success("数据加载完成")
-                this.dtyear.sort(this.sortId);
-                console.log(this.dtyear)
                 console.log(this.dtyear2)
               }
             }
@@ -297,6 +286,7 @@ export default {
                           max: 'dataMax',
                           axisLabel: {
                             formatter: function (n) {
+                              //console.log("formatter",Math.round(n) + '')
                               return Math.round(n) + '';
                             }
                           }
@@ -315,6 +305,7 @@ export default {
                             show: true,
                             fontSize: 14,
                             formatter: function (value) {
+                            // console.log(value + '{flag|' + getFlag(value) + '}')
                               return value + '{flag|' + getFlag(value) + '}';
                             },
                             rich: {
@@ -385,7 +376,7 @@ export default {
                           return d[4] === year;
                         });
                         option.series[0].data = source;
-                        console.log(year,option.series[0].data[0][4])
+                        console.log(year,option.series[0].data[0][4],option.series[0].data)
                         option.graphic.elements[0].style.text = year;
                         myChart.setOption(option);
                       }
