@@ -146,7 +146,6 @@ export default {
                 const item = params;
                 if(item.data.category==0){
                   return `${item.data.title.slice(0,5)+"..."}`
-
                 }
                 return `${item.data.truename.slice(0,5)+"..."}`;
               }
@@ -158,6 +157,7 @@ export default {
                 // 写个外部函数来获取名称， 把节点相关字段全部显示
                 if (typeof item.truename != 'undefined'&&item.category==1) {
                   temStr += `作者名称：${item.truename}<br/>`;
+                  temStr+=`作者编号：${item.index}<br/>`;
                 }
                 if(typeof item.referenceCount != 'undefined'){
                   temStr += `被引用次数：${item.referenceCount}<br/>`;
@@ -167,6 +167,7 @@ export default {
                 }
                 if (item.category==0) {
                   temStr += `标题：${item.title}<br/>`;
+                  temStr += `论文编号：${item.index}<br/>`
                 }
                 if (item.category==4) {
                   temStr += `会议或期刊：${item.truename}<br/>`;
