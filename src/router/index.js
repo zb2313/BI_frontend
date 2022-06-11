@@ -5,30 +5,13 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        redirect: '/dashboard'
-    },
-    {
-        path: "/login",
-        name: "Login",
-        meta: {
-            title: '登录'
-        },
-        component: () => import( '@/views/Login')
+        redirect: '/Home'
     },
     {
         path: "/Home",
         name: "Home",
         component: () => import('../views/Home'),
         children: [
-            {
-                path: "/dashboard",
-                name: "dashboard",
-                meta: {
-                    title: '数据概览'
-                },
-                component: () => import( "@/views/DashBoard")
-                //数据概览
-            },
             {
                 path: "/DUnit",
                 name: "DUnit",
@@ -60,22 +43,18 @@ const routes = [
                 //输入一个实体 查询关联的所有关系和关联实体
             },
             {
+                path: '/EntitySearch2',
+                name: 'EntitySearch2',
+                component: () => import('@/views/EntitySearch2')
+                //输入一个实体 查询关联的所有关系和关联实体
+            },
+            {
                 path: '/EntityRelation',
                 name:'EntityRelation',
                 component:()=>import('@/views/EntityRelation.vue')
                 //输入两个实体 查询其可能存在的多跳关系
             },
-            {
-                path:'/TraceSource',
-                name:'TraceSource',
-                component:()=>import('@/views/TraceSource.vue')
-                //
-            },
-            {
-              path: '/AsinDetails',
-              name:'AsinDetails',
-              component:()=>import('@/views/AsinDetails.vue')
-            },
+
         ]
     },
 

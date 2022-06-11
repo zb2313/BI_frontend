@@ -55,7 +55,7 @@ export default {
     drawChart() {
       let chartDom = document.getElementById('main');
       let myChart = echarts.init(chartDom);
-      const updateFrequency = 2000;
+      const updateFrequency = 4000;
       const dimension = 0;
       /*let colorList = ['#00008b', '#f00', '#ffde00',
         '#002a8f', '#003580', '#ed2939', '#000',

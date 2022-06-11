@@ -54,28 +54,10 @@ export default {
     return {
       items: [
         {
-          icon: "el-icon-s-custom",
-          index: "/dashboard",
-          title: "数据概览",
-        },
-        {
           icon: "el-icon-s-grid",
           index: "/DUnit",
           title: "关键单位查询",
-          // subs: [
-          //   {
-          //     index: "/AttractionOrder",
-          //     title: "景点门票",
-          //   },
-          //   {
-          //     index: "/TrafficOrder",
-          //     title: "交通票",
-          //   },
-          //   {
-          //     index: "/HotelOrder",
-          //     title: "酒店订单",
-          //   },
-          // ],
+
         },
         {
           icon: "el-icon-tickets",
@@ -94,34 +76,20 @@ export default {
         },
         {
           icon: "el-icon-s-opportunity",
-          index: "/Graph",
-          title: "统计数据2",
+          index: "/EntitySearch",
+          title: "实体关系查询",
         },
         {
-          icon: "el-icon-s-comment",
-          index: "/Cooperation",
-          title: "合作查询比较（neo4j）",
+          icon: "el-icon-s-opportunity",
+          index: "/EntitySearch2",
+          title: "实体关系查询2",
         },
         {
-          icon: "el-icon-s-comment",
-          index: "/DateCompare",
-          title: "日期查询比较",
+          icon: "el-icon-s-opportunity",
+          index: "/EntityRelation",
+          title: "实体联系查询",
         },
-        {
-          icon: "el-icon-s-promotion",
-          index: "/TraceSource",
-          title: "溯源查询",
-        },
-        {
-          icon: "el-icon-s-management",
-          index: "/ImdbRank",
-          title: "Imdb榜单",
-        },
-        {
-          icon: "el-icon-s-management",
-          index: "/AsinDetails",
-          title: "asin详细信息",
-        }
+
       ],
       onRoutes: "",
     };
