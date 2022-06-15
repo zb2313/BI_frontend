@@ -81,11 +81,6 @@ export default {
         },
         {
           icon: "el-icon-s-opportunity",
-          index: "/EntitySearch2",
-          title: "实体关系查询2",
-        },
-        {
-          icon: "el-icon-s-opportunity",
           index: "/EntityRelation",
           title: "实体联系查询",
         },

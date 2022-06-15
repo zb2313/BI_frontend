@@ -43,12 +43,6 @@ const routes = [
                 //输入一个实体 查询关联的所有关系和关联实体
             },
             {
-                path: '/EntitySearch2',
-                name: 'EntitySearch2',
-                component: () => import('@/views/EntitySearch2')
-                //输入一个实体 查询关联的所有关系和关联实体
-            },
-            {
                 path: '/EntityRelation',
                 name:'EntityRelation',
                 component:()=>import('@/views/EntityRelation.vue')

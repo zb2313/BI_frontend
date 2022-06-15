@@ -17,7 +17,7 @@ export default {
   data()
   {
     return{
-      interest:"",
+      interest:"new product",
       keyunits:[],
 
     }

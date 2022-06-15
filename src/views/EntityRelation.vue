@@ -13,9 +13,6 @@
   <el-input v-model="index2" style="width: 200px"></el-input>
   <el-button @click="setData()">加载数据</el-button>
   <el-button @click="drawChart()">绘图</el-button><br>
-  //a-a: 483740 749049
-  //a-p: 26875 1001135
-  //p-p: 1396322 1396323
   <div id="main" style="width: 100%;height:600px;"></div>
 </div>
 </div>
@@ -30,8 +27,8 @@ export default {
   name: "EntityRelation",
   data(){
     return{
-      index1:"",
-      index2:"",
+      index1:"483740",
+      index2:"749049",
       //a-a: 483740 749049
       //a-p: 26875 1001135
       //p-p: 1396322 1396323
